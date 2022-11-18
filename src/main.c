@@ -4,13 +4,13 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
 
 int main(){
   printf("Brainkfuck interpreter \n");
   while (1) {
     //leer una cadena de consola y pasarla por el analizador sintactico
-
+    
 
     printf("Ingrese un sting de brainfuck a ser analizado: ");
     char * const brainfuck_src = inputString();

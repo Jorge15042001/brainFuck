@@ -29,6 +29,8 @@ Test(test1, test1) {
   cr_expect(r.tokens[1] == GREATER_THAN, "Token must be GREATER_THAN");
   cr_expect(r.tokens[2] == DOT, "Token must be DOT");
 
+  printf("Test 1: %s\n",brainfuck_src);
+  printLexerResultWords(&r);
 }
 
 Test(test2, test2) {
@@ -41,4 +43,32 @@ Test(test2, test2) {
   cr_expect(r.tokens[3] == MINUS, "Token must be MINUS");
   cr_expect(r.tokens[4] == DOT, "Token must be DOT");
 
+  printf("Test 2: %s\n",brainfuck_src);
+  printLexerResultWords(&r);
+}
+
+Test(test3, test3) {
+  const char *const brainfuck_src = "+++++++..+++.?";
+  LexerResult r = RunLexicalAnalisys(brainfuck_src, strlen(brainfuck_src));
+
+  cr_expect(r.tokens[0] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[1] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[2] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[3] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[4] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[5] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[6] == PLUS, "Token must be PLUS");
+
+  cr_expect(r.tokens[7] == DOT, "Token must be DOT");
+  cr_expect(r.tokens[8] == DOT, "Token must be DOT");
+
+  cr_expect(r.tokens[9] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[10] == PLUS, "Token must be PLUS");
+  cr_expect(r.tokens[11] == PLUS, "Token must be PLUS");
+
+  cr_expect(r.tokens[12] == DOT, "Token must be DOT");
+  cr_expect(r.tokens[13] == ILLEGAL, "Token must be ILLEGAL");
+
+  printf("Test 3: %s\n",brainfuck_src);
+  printLexerResultWords(&r);
 }

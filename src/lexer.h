@@ -11,4 +11,6 @@ LexerResult RunLexicalAnalisys(const char *buffer,const int length);
 
 void printLexerResult(const LexerResult* const r);
 
+void printLexerResultWords(const LexerResult* const r);
+
 void freeLexerResult(LexerResult *const lr);
