@@ -51,7 +51,7 @@ LexerResult RunLexicalAnalisys(const char *buffer,const int length){
 void printLexerResult(const LexerResult* const r){ 
   // imprimir los resultados del lexer
   for (unsigned int i=0; i < r->length ; i++){
-    printf("\tToken: %d\n",r->tokens[i]);
+    printf("\t%d ",r->tokens[i]);
   }
 }
 
