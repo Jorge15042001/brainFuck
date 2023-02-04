@@ -1,7 +1,8 @@
 #include "interpreter.h"
 #include "token.h"
 
-#include <malloc.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 ProgramState NewInterpreter(const LexerResult *const toks) {
   char *const buffer = calloc(BUFFER_SIZE, sizeof(char));
@@ -78,8 +79,8 @@ void executeProgramStep(ProgramState *state) {
   }
   state->program_counter++;
 }
-void executeProgram(ProgramState* state){
-    while (state->program_counter<state->tokens->length) {
-      executeProgramStep(state);
-    }
+void executeProgram(ProgramState *state) {
+  while (state->program_counter < state->tokens->length) {
+    executeProgramStep(state);
+  }
 }
