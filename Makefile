@@ -13,7 +13,7 @@ TEST_SRC_FILES := $(wildcard $(TEST_SRC_DIR)/*.c)
 TEST_BIN_FILES := $(patsubst $(TEST_SRC_DIR)/%.c,$(TEST_BIN_DIR)/%,$(TEST_SRC_FILES))
 
 
-CXXFLAGS := -O3 -Wall -Wextra 
+CXXFLAGS := -O3 -Wall -Wextra -Wpedantic -Wformat-overflow -Wformat-nonliteral -Wconversion -Warith-conversion
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p build
