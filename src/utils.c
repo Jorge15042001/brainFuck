@@ -13,8 +13,13 @@ char *inputString(void){
     unsigned int len = 0;
     str = realloc(NULL, sizeof(*str)*size);//size is start size
     if(!str)return str;
-    while(EOF!=(ch=fgetc(fp)) && ch != '\n'){
+    /** while(EOF!=(ch=fgetc(fp)) && ch != '\n'){ */
+    while((ch=fgetc(fp)) != '\n'){
         str[len++]=(char)ch;
+        if (ch == EOF){
+          printf("Program terminated by user");
+          exit(0);
+        }
         if(len==size){
             str = realloc(str, sizeof(*str)*(size+=16));
             if(!str)return str;
