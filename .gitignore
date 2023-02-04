@@ -1,4 +1,6 @@
 brainfuck
 build/
 test_build/
+compile_commands.json
+.cache/
 
